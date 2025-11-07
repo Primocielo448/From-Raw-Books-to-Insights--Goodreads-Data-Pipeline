@@ -1,2 +1,10 @@
-pandas==2.2.3
-matplotlib==3.9.2
+# Requirements for the Goodreads Books Pipeline & Analysis project
+# To install all dependencies, run:
+#    pip install --upgrade pip setuptools wheel
+#    pip install -r requirements.txt
+
+pip>=25.3
+setuptools>=70.0.0
+wheel>=0.44.0
+pandas>=2.2.3
+matplotlib>=3.9.2
