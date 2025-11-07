@@ -1,94 +1,87 @@
-# 📚 From Raw Books to Insights: Goodreads Data Pipeline
+# 📚 From Raw Books to Insights — Goodreads Data Pipeline & Analysis
 
-An end-to-end data pipeline and analytics project using Python and SQL, built to transform raw book data into meaningful insights.  
-This project combines **Data Engineering** and **Data Analysis** — from ingestion and cleaning to visual storytelling.
-
----
-
-## 🎯 Project Overview
-
-The goal of this project is to simulate a real-world data workflow using the **Goodreads Books dataset (by Jeffrey Allen)**.  
-We’ll build a complete pipeline that:
-
-1. **Extracts** raw data (CSV format)
-2. **Transforms** and cleans it (handling missing values, normalizing ratings, fixing genres)
-3. **Loads** the results into a structured format (SQL database or CSV)
-4. **Analyzes** the data to uncover reading trends and insights:
-   - Top-rated genres and authors  
-   - Rating distributions by language or year  
-   - Relationships between number of pages, popularity, and ratings  
+**Author:** Athanasios-Marios Marougkas  
+**Technologies:** Python, Pandas, Matplotlib, Jupyter Notebook, Git
 
 ---
 
-## 🧱 Project Structure
+## 🧠 Overview
 
-from-raw-books-to-insights/
+This project demonstrates a complete **data engineering and analytics workflow** using a dataset of books from Goodreads (source: Jeffrey Allen).  
+The goal is to showcase both **data pipeline automation** and **exploratory data analysis (EDA)** through clean, reproducible code and clear visual insights.
+
+---
+
+## 🧩 Project Architecture
+
+project/
 │
 ├── data/
-│ ├── raw/ # Original Goodreads dataset (CSV)
-│ └── processed/ # Cleaned and transformed data
+│ ├── raw/ # Raw CSV from Goodreads
+│ ├── processed/ # Cleaned CSV ready for analysis
 │
-├── notebooks/ # Jupyter notebooks for data exploration and visualization
+├── notebooks/
+│ └── Book_Data_Analysis.ipynb # Exploratory data analysis and charts
 │
-├── src/ # Python scripts for ETL pipeline
+├── src/
+│ └── data/
+│ ├── load_data.py # Loads raw dataset
+│ └── clean_data.py # Cleans and preprocesses data
 │
+├── outputs/
+│ └── figures/ # Generated visualizations
+│
+├── main.py # Runs the entire pipeline
 ├── requirements.txt # Dependencies
-│
-└── README.md # Project documentation
+└── README.md # Documentation
+
+yaml
+Αντιγραφή κώδικα
 
 ---
 
-## 🧰 Tech Stack
+## ⚙️ Pipeline Steps
 
-| Purpose | Tools / Libraries |
-|----------|------------------|
-| Data Processing | **Python**, **pandas**, **numpy** |
-| Database | **SQLite / SQLAlchemy** |
-| Visualization | **matplotlib**, **seaborn**, **Plotly** |
-| Notebook | **Jupyter** |
-| Workflow | **GitHub Desktop**, **Git** |
+1. **Load raw data** → from `/data/raw/books.csv`
+2. **Clean data** → removes duplicates, missing titles/authors, fixes formatting  
+3. **Analyze & visualize** → interactive EDA in Jupyter Notebook  
 
----
+Run the full pipeline with:
+```bash
+python main.py
+Open the analysis notebook with:
 
-## 🔄 Pipeline Design
+bash
+Αντιγραφή κώδικα
+jupyter notebook notebooks/Book_Data_Analysis.ipynb
+📊 Example Insights
+Metric	Description
+⭐ Rating Distribution	Most books rated between 3.5 and 4.5
+👑 Top Authors	Frequent authors in the dataset
+📘 Pages vs Ratings	Correlation between book length and reader satisfaction
+🕒 Publication Trends	How ratings evolve across years
 
-Raw Data (CSV)
-      ↓
-Data Cleaning & Transformation (pandas)
-      ↓
-Load to SQL / Processed CSV
-      ↓
-Exploratory Data Analysis (Jupyter)
-      ↓
-Visual Insights & Conclusions
+Sample chart:
 
-📊 Planned Analyses
 
-⭐ Distribution of average ratings per genre
+🧩 Tech Stack
+Python 3.12+
 
-🧾 Most frequent authors in top-rated books
+Pandas for data manipulation
 
-🌍 Language patterns and reader preferences
+Matplotlib / Seaborn for visualization
 
-📈 Correlation between book length and rating
+Jupyter Notebook for EDA
 
-🚀 Next Steps
+Git & GitHub for version control
 
- Load dataset and inspect structure
+🚀 Next Steps / Extensions
+Add genre classification or sentiment analysis
 
- Create ETL script in src/
+Build a small recommendation system
 
- Build first analysis notebook
+Deploy a Streamlit dashboard for interactive exploration
 
- Add visualizations and insights
-
- Publish final results with graphs and conclusions
-
-✨ About the Project
-
-This repository is part of a personal learning journey into Data Engineering & Analytics —
-connecting both worlds through a hands-on, creative approach.
-
-“Data tells stories — if you give it a voice.”
-
----
+🏁 Credits
+Dataset by Jeffrey Allen on Kaggle
+Project developed by Athanasios-Marios Marougkas as part of a personal data engineering & analytics portfolio.
